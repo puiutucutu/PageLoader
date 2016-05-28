@@ -19,7 +19,9 @@ The loader `<div class="o-page-loader--spinner"></div>` will continue to animate
 </div>
 ```
 
-This component is affected when one of two window events occur: (i) load or (ii) beforeunload. The javascript responsible for handling these two window events is placed at the bottom of the page, right before the `</body>` tag which ensures that the entire page and its assets have completely loaded prior to loader being hidden. You can alternatively use some javascript of `document.ready. If you'd like to learn more about this, read this thorough comment on StackOverflow at http://stackoverflow.com/a/9899701/1727232.
+This component is affected when one of two window events occur: (i) load or (ii) beforeunload. 
+
+The javascript responsible for handling these two window events is placed at the bottom of the page, right before the `</body>` tag which ensures that the entire page and its assets have completely loaded prior to loader being hidden. You can alternatively use some javascript of `document.ready. If you'd like to learn more about this, read this thorough comment on StackOverflow at http://stackoverflow.com/a/9899701/1727232.
 
 ### Window Load Event
 
