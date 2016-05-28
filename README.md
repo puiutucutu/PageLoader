@@ -4,7 +4,7 @@ Simple and clean solution for page loader using javascript and css animations.
 
 ## How it works
 
-The html container below, particularily `<div class="o-page-loader">` is set to `display: fixed` occupying the entire user screen and is initially set with `opacity: 1`. The component or loader will continue to animate up until `display: none` is applied. We animate the opacity in the css via `transition: opacity .5s`.
+The html container below, particularily `<div class="o-page-loader">` is set to `display: fixed` occupying the entire user screen and is initially set with `opacity: 1`. The loader `<div class="o-page-loader--spinner"></div>` will continue to animate up until `display: none` is applied on the parent container. We animate the opacity of the parent container in the css via `transition: opacity .5s`.
 
 ```html
     <div class="o-page-loader">
