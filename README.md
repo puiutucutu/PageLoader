@@ -19,7 +19,7 @@ The loader `<div class="o-page-loader--spinner"></div>` will continue to animate
 </div>
 ```
 
-This component is affected when one of two window events occur: (i) load or (ii) beforeunload. 
+This component is affected when one of two window events occur: **(i)** load or **(ii)** beforeunload. 
 
 The javascript responsible for handling these two window events is placed at the bottom of the page. Placing javascript at the bottom of the page ensures that DOM has loaded and is ready. Note that images and stylesheets may still be loading even after the DOM has loaded. 
 
