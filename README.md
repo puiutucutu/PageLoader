@@ -1,6 +1,8 @@
 # PageLoader
 
-Simple and clean solution for page loader using javascript and css animations. It works by creating a loader spinner on the `beforeunload` window event and then creating a loader spinner on the window event `load` when the page reloads. This gives the impression to the user that the loading transition was seamless. 
+Simple and clean solution for page loader using javascript and css animations. 
+
+It works by creating a loader spinner on the `beforeunload` window event and then creating a loader spinner on the window event `load` when the page reloads. This gives the impression to the user that the loading transition was seamless. 
  
 ## Example
 
