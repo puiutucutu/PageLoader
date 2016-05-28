@@ -4,19 +4,19 @@ Simple and clean solution for page loader using javascript and css animations.
 
 ## How it works
 
-The html container below, particularily `<div class="o-page-loader">` is set to `display: fixed` occupying the entire user screen and is initially set with `opacity: 1`. 
+The html container below, particularily `<div class="o-page-loader">` is set to `display: fixed` occupying the entire user screen and is initially set with `opacity: 1` and the opacity is animated using css via `transition: opacity .5s`.
 
-The loader `<div class="o-page-loader--spinner"></div>` will continue to animate up until `display: none` is applied on the parent container. We animate the opacity of the parent container in the css via `transition: opacity .5s`.
+The loader `<div class="o-page-loader--spinner"></div>` will continue to animate up until `display: none` is applied on the parent container.
 
 ```html
-    <div class="o-page-loader">
-        <div class="o-page-loader--content">
-            <div class="o-page-loader--spinner"></div>
-            <div class="o-page-loader--message">
-                <span>Loading...</span>
-            </div>
+<div class="o-page-loader">
+    <div class="o-page-loader--content">
+        <div class="o-page-loader--spinner"></div>
+        <div class="o-page-loader--message">
+            <span>Loading...</span>
         </div>
     </div>
+</div>
 ```
 
 This component is affected when one of two window events occur: (i) load or (ii) beforeunload. The javascript responsible for handling these two window events is placed at the bottom of the page, right before the `</body>` tag which ensures that the entire page and its assets have completely loaded prior to loader being hidden. You can alternatively use some javascript of `document.ready. If you'd like to learn more about this, read this thorough comment on StackOverflow at http://stackoverflow.com/a/9899701/1727232.
