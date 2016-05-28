@@ -23,7 +23,7 @@ This component is affected when one of two window events occur: **(1)** load or 
 
 ### 1. Window Load Event
 
-When an html page is loaded, the loader component will be the first html loaded inside the `<body></body>` tags, as such the loader will continue to animate until hidden in the DOM. When the window load event fires, the loader component can be hidden.
+When an html page is loaded, the loader component is the first html loaded inside the `<body></body>` tags. As such, the loader will continue to animate until it is hidden in the DOM. When the window load event fires, the loader component is hidden.
 
 ### 2. Window Beforeunload Event
 
