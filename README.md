@@ -37,9 +37,9 @@ The javascript responsible for handling these two window events is placed at the
 
 Since we are interested for both the DOM and assets to be completely loaded before hiding the loader, the PageLoader javascript uses `window.addEventListener('load', function() {});`. This means that you can place the PageLoader javascript anywhere on the page and the loader will still only dissapear when both the DOM and assets are completly loaded.
 
-In the html examples above, the javascript is placed at the bottom of the page due to personal preference. Depending on your situation, you may only care that the DOM tree is ready in order to hide the loader, at which point you can rewrite the javascript code to contain a listener for `document.addEventListener('DOMContentLoaded', function() {});`.
+In the html examples above, the javascript is placed at the bottom of the page due to personal preference. Depending on your situation, you may only care that the DOM tree is ready in order to hide the loader, at which point you can rewrite the javascript code to contain a listener for `document.addEventListener('DOMContentLoaded', function() {});` instead.
 
-If you'd like to learn more about window, body, and document loading events then read these two comments on StackOverflow:
+Read these comments on Stackoverflow to get a better understanding about window, body, and document loading events:
 * http://stackoverflow.com/a/9899701/1727232.
 * http://stackoverflow.com/a/7371558/1727232
  
