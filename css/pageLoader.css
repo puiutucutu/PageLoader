@@ -1,0 +1,72 @@
+/* --------------------------------------------------------------------------------------- */
+/* Loader
+/* --------------------------------------------------------------------------------------- */
+
+.o-page-loader {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity .5s;
+    background: rgb(44,62,80);
+    z-index: 999;
+}
+
+.o-page-loader--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.o-page-loader--spinner {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255,255,255);
+    margin: 20px auto;
+    animation: rotate-plane 1.2s infinite ease-in-out;
+    -webkit-animation: rotate-plane 1.2s infinite ease-in-out;
+}
+
+.o-page-loader--message {
+    color: rgb(255,255,255);
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* --------------------------------------------------------------------------- */
+/* Animation - Loading Spinner
+/* --------------------------------------------------------------------------- */
+
+@-webkit-keyframes rotate-plane {
+    0% {
+        -webkit-transform: perspective(120px)
+    }
+    50% {
+        -webkit-transform: perspective(120px) rotateY(180deg)
+    }
+    100% {
+        -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+    }
+}
+
+@keyframes rotate-plane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    }
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    }
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
