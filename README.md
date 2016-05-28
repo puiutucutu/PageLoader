@@ -21,9 +21,15 @@ The loader `<div class="o-page-loader--spinner"></div>` will continue to animate
 
 This component is affected when one of two window events occur: (i) load or (ii) beforeunload. 
 
-The javascript responsible for handling these two window events is placed at the bottom of the page, right before the `</body>` tag which ensures that DOM has completely loaded prior to loader being hidden. Note that images and stylesheets may still be loading and you may need to use something like `document.addEventListener('load', function() {});` if you need images and stylesheets to be completely loaded before the loader spinner is hidden.
+The javascript responsible for handling these two window events is placed at the bottom of the page. Placing javascript at the bottom of the page ensures that DOM has loaded and is ready. Note that images and stylesheets may still be loading even after the DOM has loaded. 
 
-If you'd like to learn more about this, read this thorough comment on StackOverflow at http://stackoverflow.com/a/9899701/1727232.
+Since we are interested for both the DOM and assets to be completely loaded before hiding the loader, the PageLoader javascript uses `window.addEventListener('load', function() {});` 
+
+and you may need to use something like `document.addEventListener('load', function() {});` if you need images and stylesheets to be completely loaded before the loader spinner is hidden.
+
+If you'd like to learn more about window and body loading events, read these two comments on StackOverflow:
+* http://stackoverflow.com/a/9899701/1727232.
+* http://stackoverflow.com/a/7371558/1727232
 
 ### Window Load Event
 
