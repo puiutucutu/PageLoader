@@ -21,13 +21,13 @@ The loader `<div class="o-page-loader--spinner"></div>` will continue to animate
 
 This component is affected when one of two window events occur: **(i)** load or **(ii)** beforeunload. 
 
-The javascript responsible for handling these two window events is placed at the bottom of the page. Placing javascript at the bottom of the page ensures that DOM has loaded and is ready. Note that images and stylesheets may still be loading even after the DOM has loaded. 
+The javascript responsible for handling these two window events is placed at the bottom of the page. Placing javascript at the bottom of the page ensures that DOM tree is completely loaded and ready. Note that images and stylesheets may still be loading even after the DOM has loaded. 
 
-Since we are interested for both the DOM and assets to be completely loaded before hiding the loader, the PageLoader javascript uses `window.addEventListener('load', function() {});` 
+Since we are interested for both the DOM and assets to be completely loaded before hiding the loader, the PageLoader javascript uses `window.addEventListener('load', function() {});`. This means that you can place the PageLoader javascript anywhere on the page and the loader will still only dissapear when both the DOM and assets are completly loaded.
 
-and you may need to use something like `document.addEventListener('load', function() {});` if you need images and stylesheets to be completely loaded before the loader spinner is hidden.
+In the html examples above, the javascript is placed at the bottom of the page due to personal preference. Depending on your situation, you may only care that the DOM tree is ready in order to hide the loader, at which point you can rewrite the javascript code to contain a listener for `document.addEventListener('DOMContentLoaded', function() {});`.
 
-If you'd like to learn more about window and body loading events, read these two comments on StackOverflow:
+If you'd like to learn more about window, body, and document loading events then read these two comments on StackOverflow:
 * http://stackoverflow.com/a/9899701/1727232.
 * http://stackoverflow.com/a/7371558/1727232
 
@@ -41,13 +41,13 @@ When the user requests a new page, the window `beforeunload` event fires and the
 
 Overall, this gives the impression to the user that the loading transition was seamless. See the gifs below for more details.
  
-## Example
+## Examples
 
 https://cdn.rawgit.com/puiu91/PageLoader/master/page.html
 
 ## Notes
 
-Sometimes pages load extremely fast, so inside `deactivateLoader()` we have a `setTimeout()` of one second to ensure that if the window load event fires extremely quickly, then the loader has time to run a little bit on window load event. This number can be changed if needed.
+Sometimes pages load extremely fast, so inside `deactivateLoader()` we have a `setTimeout()` of one second to ensure that if the window load event fires extremely quickly, then the loader animation gets a chance to play. This number can be changed as needed, but one second feels the best for me.
 
 ```js
 
