@@ -21,16 +21,6 @@ The loader `<div class="o-page-loader--spinner"></div>` will continue to animate
 
 This component is affected when one of two window events occur: **(i)** load or **(ii)** beforeunload. 
 
-The javascript responsible for handling these two window events is placed at the bottom of the page. Placing javascript at the bottom of the page ensures that DOM tree is completely loaded and ready. Note that images and stylesheets may still be loading even after the DOM has loaded. 
-
-Since we are interested for both the DOM and assets to be completely loaded before hiding the loader, the PageLoader javascript uses `window.addEventListener('load', function() {});`. This means that you can place the PageLoader javascript anywhere on the page and the loader will still only dissapear when both the DOM and assets are completly loaded.
-
-In the html examples above, the javascript is placed at the bottom of the page due to personal preference. Depending on your situation, you may only care that the DOM tree is ready in order to hide the loader, at which point you can rewrite the javascript code to contain a listener for `document.addEventListener('DOMContentLoaded', function() {});`.
-
-If you'd like to learn more about window, body, and document loading events then read these two comments on StackOverflow:
-* http://stackoverflow.com/a/9899701/1727232.
-* http://stackoverflow.com/a/7371558/1727232
-
 ### Window Load Event
 
 When an html page is loaded, the loader component will be the first html loaded inside the `<body></body>` tags, as such the loader will continue to animate until hidden in the DOM. When the window load event fires, the loader component can be hidden.
@@ -40,6 +30,18 @@ When an html page is loaded, the loader component will be the first html loaded 
 When the user requests a new page, the window `beforeunload` event fires and the loader component has its display set to block. Note that we do not care about the opacity transition since most page redirects happen too quickly for even an css transition of 1 second to fully complete.
 
 Overall, this gives the impression to the user that the loading transition was seamless. See the gifs below for more details.
+
+### Additional Information
+
+The javascript responsible for handling these two window events is placed at the bottom of the page. Placing javascript at the bottom of the page ensures that DOM tree is completely loaded and ready. Note that images and stylesheets may still be loading even after the DOM has loaded. 
+
+Since we are interested for both the DOM and assets to be completely loaded before hiding the loader, the PageLoader javascript uses `window.addEventListener('load', function() {});`. This means that you can place the PageLoader javascript anywhere on the page and the loader will still only dissapear when both the DOM and assets are completly loaded.
+
+In the html examples above, the javascript is placed at the bottom of the page due to personal preference. Depending on your situation, you may only care that the DOM tree is ready in order to hide the loader, at which point you can rewrite the javascript code to contain a listener for `document.addEventListener('DOMContentLoaded', function() {});`.
+
+If you'd like to learn more about window, body, and document loading events then read these two comments on StackOverflow:
+* http://stackoverflow.com/a/9899701/1727232.
+* http://stackoverflow.com/a/7371558/1727232
  
 ## Examples
 
