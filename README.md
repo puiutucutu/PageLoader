@@ -21,11 +21,11 @@ The loader `<div class="o-page-loader--spinner"></div>` will continue to animate
 
 This component is affected when one of two window events occur: **(1)** load or **(2)** beforeunload. 
 
-### 1. Window Load Event
+### Window Load Event
 
 When an html page is loaded, the loader component is the first html loaded inside the `<body></body>` tags. As such, the loader will continue to animate until it is hidden in the DOM. When the window load event fires, the loader component is hidden.
 
-### 2. Window Beforeunload Event
+### Window Beforeunload Event
 
 When the user requests a new page, the window `beforeunload` event fires and the loader component has `display: block` applied. Note that we do not care about the opacity transition since most page redirects happen too quickly for a css transition of even 1 second to fully complete.
 
