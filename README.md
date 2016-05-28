@@ -16,8 +16,9 @@ Sometimes pages load extremely fast, so inside `deactivateLoader()` we have a `s
 
   function deactivateLoader() {
     /**
-     * ensures that the loading animation plays for at least a second to give the appearance of seamlessly loading on
-     * pages that execute and load extremely quickly (i.e., intranet pages)
+     * ensures that the loading animation plays for at least a second to give the 
+     * appearance of seamlessly loading on pages that execute and load extremely 
+     * quickly (i.e., intranet pages)
      */
     setTimeout(function() {
       deactivate();
