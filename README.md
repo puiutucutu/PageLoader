@@ -19,7 +19,7 @@ The loader `<div class="o-page-loader--spinner"></div>` will continue to animate
 </div>
 ```
 
-This component is affected when one of two window events occur: **(1)** load or **(2)** beforeunload. 
+This component is affected when one of two window events occur - **(1)** load or **(2)** beforeunload. 
 
 ### Window Load Event
 
