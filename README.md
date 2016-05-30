@@ -29,7 +29,7 @@ When an html page is loaded, the loader component is the first html loaded insid
 
 When the user requests a new page, the window `beforeunload` event fires and the loader component has `display: block` applied. Note that we do not care about the opacity transition since most page redirects happen too quickly for a css transition of even 1 second to fully complete.
 
-Overall, this gives the impression to the user that the loading transition was seamless. See the gifs below for more details.
+Overall, by using these two events, it this gives the user the impression that the loading transition was seamless. See the gifs below for more details.
 
 ### Additional Information
 
