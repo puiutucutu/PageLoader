@@ -31,8 +31,4 @@
     }
   }
 
-})(
-
-  document.querySelector('.o-page-loader')
-
-);
+})(document.querySelector('.o-page-loader'));
