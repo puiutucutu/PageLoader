@@ -1,6 +1,4 @@
-(function() {
-
-  var loader = document.getElementsByClassName('o-page-loader')[0];
+(function(loader) {
 
   window.addEventListener('beforeunload', function(e) {
     activateLoader();
@@ -33,4 +31,8 @@
     }
   }
 
-})();
+})(
+
+  document.querySelector('.o-page-loader')
+
+);
