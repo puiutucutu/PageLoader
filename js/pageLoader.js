@@ -16,7 +16,7 @@
   function deactivateLoader() {
     /**
      * ensures that the loading animation plays for at least a second to give the
-     * appearance of seamlessly loading on pages that execute and load extremely
+     * appearance of seamless loading on pages that execute and load extremely
      * quickly (i.e., intranet pages)
      */
     setTimeout(function() {
